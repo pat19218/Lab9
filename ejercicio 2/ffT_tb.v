@@ -15,14 +15,15 @@ ffd2 zweis(clk, reset, enabled, d2, q2);
 ffd4 vier(clk, reset, enabled, d4, q4);
 
 initial begin
-     #1	d1=1'b1; d2=2'b10;  d4=4'b1010;
-     #1 d1=1'b0; d2=2'b00;  d4=4'b1110; 
-     #1 d1=1'b1; d2=2'b01;  d4=4'b1011; enabled=1;
-     #1 d1=1'b1; d2=2'b11;  d4=4'b1100; #1 reset=1; #3 reset=0;
-     #1 d1=1'b0; d2=2'b10;  d4=4'b1111;
-     #1 d1=1'b1; d2=2'b11;  d4=4'b0001; enabled=0;
-     #1 d1=1'b0; d2=2'b11;  d4=4'b1110; enabled=1;
-     #1 d1=1'b1; d2=2'b10;  d4=4'b1101;
+       reset=1; #1 reset = 0; enabled=1; reset=1; #1 reset = 0;
+     #2 d1=1'b1; d2=2'b10;  d4=4'b1010; 
+     #2 d1=1'b0; d2=2'b00;  d4=4'b1110; 
+     #2 d1=1'b1; d2=2'b01;  d4=4'b1011; 
+     #2 d1=1'b1; d2=2'b11;  d4=4'b1100; 
+     #2 d1=1'b0; d2=2'b10;  d4=4'b1111;
+     #2 d1=1'b1; d2=2'b11;  d4=4'b0001; 
+     #2 d1=1'b0; d2=2'b11;  d4=4'b1110; 
+     #2 d1=1'b1; d2=2'b10;  d4=4'b1101;
 
 end
 
