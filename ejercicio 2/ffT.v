@@ -1,31 +1,9 @@
-module ffd1(input clk, input reset, input ena, input d, output logic q);
-
+module ffT1(input clk, input reset, input ena, output logic q);
+reg d;
 	always @ (posedge clk, posedge reset)
 		if (reset)
-			q <= d;
+			q <= 0;
 		else if (ena)
-			q <= ~d;			
+			q <= ~q;			
 endmodule
-
-module ffd2(input clk, input reset, input ena, input [1:0]d, output logic [1:0]q);
-
-	always @ (posedge clk, posedge reset)
-		if (reset)
-			q <= d;
-		else if (ena)
-			q <= ~d;			
-endmodule
-
-module ffd4(input clk, input reset, input ena, input [3:0]d, output logic [3:0]q);
-
-	always @ (posedge clk, posedge reset)
-		if (reset)
-			q <= d;
-		else if (ena)
-			q <= ~d;			
-endmodule
-
-
-
-
 
