@@ -5,7 +5,7 @@ endmodule
 
 
 
-module ffd1(input clk, input reset, input ena, input d, output reg q);
+module ffd1(input clk, input reset, input ena, input d, output logic q);
 
 	always @ (posedge clk, posedge reset)
 		if (reset)
@@ -14,7 +14,7 @@ module ffd1(input clk, input reset, input ena, input d, output reg q);
 			q <= d;			
 endmodule
 
-module ffd2(input clk, input reset, input ena, input [1:0]d, output reg [1:0]q);
+module ffd2(input clk, input reset, input ena, input [1:0]d, output logic [1:0]q);
 
 	always @ (posedge clk, posedge reset)
 		if (reset)
@@ -23,7 +23,7 @@ module ffd2(input clk, input reset, input ena, input [1:0]d, output reg [1:0]q);
 			q <= d;			
 endmodule
 
-module ffd4(input clk, input reset, input ena, input [3:0]d, output reg [3:0]q);
+module ffd4(input clk, input reset, input ena, input [3:0]d, output logic [3:0]q);
 
 	always @ (posedge clk, posedge reset)
 		if (reset)
