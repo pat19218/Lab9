@@ -69,12 +69,35 @@ initial begin
 	#1 addres = 7'b1111001;
 	#1 $display("Address = %b, dato = %b", addres, dato);
 
+
+
+
+	#1 addres = 7'b1010101;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b0101010;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1001101;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1000111;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b0111011;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1111111;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1111110;
+	#1 $display("Address = %b, dato = %b", addres, dato);
 end
 
 
 
 initial
-	#25 $finish;		
+	#60 $finish;		
 initial begin
 	$dumpfile("ROMcase_tb.vcd");
 	$dumpvars(0, testbench);
