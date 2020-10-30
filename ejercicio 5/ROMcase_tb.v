@@ -1,27 +1,80 @@
 module testbench();
 
-reg enabled = 0;
-reg [3:0]d;
-output wire [3:0]q1;
+reg [6:0]addres;
+output wire [12:0]dato;
 
-buftri eins(enabled, d, q1);
+ROM zucker(addres, dato);
 
 initial begin
-	   enabled=0; d=4'b0;
-	#2 d=4'b0010;	   
-	#2 enabled=1; d=4'b1000;	   
-	#2 d=4'b1;	   
-	#2 enabled=0; d=4'b0100;
-	#2 enabled=1; d=4'b0001;	   
-	#2 d=4'b0011;
-	#2 d=4'b0101;	   
-	#2 d=4'b1010;	   
+	   addres = 7'b0000000;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+	
+	#1 addres = 7'b0000101;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+	
+	#1 addres = 7'b0000001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b0001101;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b0001001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b0010001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b0011001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b0100001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b0101001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b0110001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b0111001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1000011;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1000001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1001011;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1001001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1010001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1011001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1100001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1101001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1110001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
+	#1 addres = 7'b1111001;
+	#1 $display("Address = %b, dato = %b", addres, dato);
+
 end
+
 
 
 initial
 	#25 $finish;		
-
 initial begin
 	$dumpfile("ROMcase_tb.vcd");
 	$dumpvars(0, testbench);
